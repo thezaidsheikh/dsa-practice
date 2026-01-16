@@ -1,6 +1,6 @@
 Prob: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 
-Sol 1: Using linear Search by remembering the past.
+Sol 1: Optimal - Using linear Search by remembering the past.
 ```java
 class Solution {
     public int maxProfit(int[] prices) {
@@ -20,7 +20,7 @@ class Solution {
 Time complexity - O(n),
 Space complexity - O(1)
 
-Sol 2: It is also a linear search
+Sol 2: Optimal - It is also a linear search
 ```java
 public class Solution{
     public static int maximumProfit(ArrayList<Integer> prices){

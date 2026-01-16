@@ -1,6 +1,6 @@
 Prob: https://leetcode.com/problems/rearrange-array-elements-by-sign/description/
 
-Sol 1: Using extra space taking arrays for positive and negative and answer
+Sol 1: Brute force - Using extra space taking arrays for positive and negative and answer
 ```java
 class Solution {
     public int[] rearrangeArray(int[] nums) {
@@ -26,7 +26,7 @@ class Solution {
 Time complexity - O(n) + O(n/2) = O(n),
 Space complexity - O(n) + O(n) + O(n) = O(n)
 
-Sol 2: Using single loop with only new array
+Sol 2: Optimal - Using single loop with only new array
 ```java
 class Solution {
     public int[] rearrangeArray(int[] nums) {
