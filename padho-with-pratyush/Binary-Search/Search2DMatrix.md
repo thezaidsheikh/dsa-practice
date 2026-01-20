@@ -38,7 +38,7 @@ class Solution {
     }
 }
 ```
-Time complexity - O(logn)
+Time complexity - O(logn),
 Space complexity - O(1)
 
 Sol 2: Optimized Sol - Using 1 times binary search
@@ -66,5 +66,5 @@ class Solution {
     }
 }
 ```
-Time complexity - O(logn)
+Time complexity - O(logn),
 Space complexity - O(1)

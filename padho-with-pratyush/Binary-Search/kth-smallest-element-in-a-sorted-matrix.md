@@ -44,5 +44,5 @@ class Solution {
     }
 }
 ```
-Time complexity - O(n + m) (for function) + O(log R) = O(n * log R)
+Time complexity - O(n + m) (for function) + O(log R) = O(n * log R),
 Space complexity - O(1)

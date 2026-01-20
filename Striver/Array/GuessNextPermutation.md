@@ -60,5 +60,5 @@ class Solution {
     }
 }
 ```
-Time complexity = O(n) + O(n) = O(2n)
+Time complexity = O(n) + O(n) = O(2n),
 Space complexity = O(1)

@@ -34,7 +34,7 @@ public class Solution {
     }
 }
 ```
-Time complexity - O(nlogn) + O(n^2) = O(n^2)
+Time complexity - O(nlogn) + O(n^2) = O(n^2),
 Space complexity - O(1)
 
 Sol 2: Optimized - Using sorting
@@ -69,7 +69,7 @@ public class Solution {
     }
 }
 ```
-Time complexity - O(nlogn) + O(n) = O(nlogn)
+Time complexity - O(nlogn) + O(n) = O(nlogn),
 Space complexity - O(1)
 
 Sol 3: Optimal - Using HashSet
@@ -108,5 +108,5 @@ public class Solution {
     }
 }
 ```
-Time complexity - O(n) + O(n) (while loop is small compared to for loop) = O(n)
+Time complexity - O(n) + O(n) (while loop is small compared to for loop) = O(n),
 Space complexity - O(n)
