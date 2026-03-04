@@ -1,7 +1,7 @@
 Prob: https://leetcode.com/problems/binary-tree-preorder-traversal/description/
 
 Sol 1: Optimal approach - Using Tree
-1. Preorder means first root value, then left childer value, then right children value;
+1. Preorder means first root value, then left children value, then right children value;
 ```java
 class Solution {
     public static void rec(TreeNode root, List<Integer> ls) {
