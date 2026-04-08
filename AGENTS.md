@@ -18,7 +18,7 @@ The current README describes the repo as a curated DSA practice collection focus
 
 ## What Actually Exists Here
 
-At the time of writing, the repo contains `80` Markdown files and no normal source-code package structure such as `src/`, `tests/`, `package.json`, `pom.xml`, or `requirements.txt`.
+At the time of writing, the repo contains `81` Markdown files and no normal source-code package structure such as `src/`, `tests/`, `package.json`, `pom.xml`, or `requirements.txt`.
 
 Key top-level items:
 
@@ -66,6 +66,7 @@ When editing these files, preserve their more educational and concept-driven sty
 
 This folder is a second pattern library and includes files like:
 
+- `Algorithms-Patterns/graph.md`
 - `Algorithms-Patterns/heap.md`
 - `Algorithms-Patterns/two-pointers.md`
 - `Algorithms-Patterns/sliding-window.md`
