@@ -1,61 +1,147 @@
 # Sliding Window Technique
 
 ## Definition
-The sliding window technique involves maintaining a window of elements in an array or string that satisfies a specific condition, and dynamically adjusting the window size by sliding it across the data structure.
+A technique that uses two pointers to create a "window" over an array or string. The window slides (both pointers move forward) to efficiently find subarrays/substrings satisfying certain conditions, avoiding redundant recomputation.
 
-## When and Why to Use
-- **When**: Problems involving subarrays/substrings with constraints (e.g., maximum/minimum sum, longest substring with unique characters, fixed-size window averages).
-- **Why**: Reduces O(n²) brute-force solutions to O(n) by reusing computations from previous windows.
+## When to Use
+- Problems asking for: maximum/minimum/longest/shortest subarray or substring
+- Contiguous elements with a specific property
+- Reducing O(n²) brute-force to O(n)
 
-## How It Works
-### Common Variations:
-1. **Fixed-size window**: Window size remains constant (e.g., maximum sum of k consecutive elements).
-2. **Variable-size window**: Window expands/shrinks based on conditions (e.g., longest substring with at most K distinct characters).
-
-### Simple Example: Maximum Sum of k Consecutive Elements
-**Problem**: Given an array of integers and an integer k, find the maximum sum of any k consecutive elements.
-**Approach**:
-- Initialize window sum with first k elements.
-- Slide window one element at a time, subtracting the leftmost element and adding the new rightmost element.
-- Track maximum sum encountered.
-
-**Code Outline**:
-```python
-def max_sum_k(arr, k):
-    window_sum = sum(arr[:k])
-    max_sum = window_sum
-    for i in range(k, len(arr)):
-        window_sum = window_sum - arr[i-k] + arr[i]
-        max_sum = max(max_sum, window_sum)
-    return max_sum
-```
-
-## Important Insights and Definitions
-- **Window Expansion/Contraction**: The key is determining when to expand (add new element) or contract (remove element) the window based on the condition.
-- **Condition Checks**: Common conditions include:
-  - Subarray sum equals target
-  - Subarray contains at most K distinct characters
-  - Subarray has all unique elements
-- **Edge Cases**: Handle empty arrays, k=0, or k larger than array size.
-
-## Differences from Other Patterns
-- **vs. Two Pointers**: Sliding window maintains a fixed or variable window size, while two pointers often look for specific pairs/triplets without fixed boundaries.
-- **vs. Prefix Sum**: Prefix sum is used for subarray sum queries, while sliding window dynamically adjusts the window to maintain a condition.
-- **vs. Kadane's Algorithm**: Kadane's finds maximum subarray sum, while sliding window can be used for more complex conditions like distinct character counts.
-
-## Template Questions to Remember When to Use
-- Is the problem about finding a subarray/substring with specific properties?
-- Do I need to maintain a window that satisfies a condition while sliding through the data?
-- Can I reuse computations from previous windows to avoid recalculating from scratch?
-
-## Type of Questions Solved
-- **Subarray Problems**: Maximum/Minimum Sum, Longest Substring with K Distinct Characters, Subarray Product Less Than K
-- **String Problems**: Longest Substring Without Repeating Characters, Minimum Window Substring
-- **Array Problems**: Maximum Average Subarray, Subarray Sum Equals K
-
-## Complexity
-- **Time**: O(n) for single pass through the array/string.
-- **Space**: O(1) extra space (not counting the input storage).
+## Why It Works
+Instead of recalculating from scratch for each position, we maintain state from the previous window and adjust incrementally.
 
 ---
-*Key Insight: The sliding window technique transforms problems with nested loops into linear passes by reusing computations from
+
+## Fixed-Size Sliding Window
+
+Window size is constant (k). Move the window one step at a time, updating the result in O(1).
+
+### Pattern
+```java
+int windowSum = 0;
+for (int i = 0; i < k; i++) {
+    windowSum += arr[i];
+}
+
+for (int i = k; i < n; i++) {
+    windowSum += arr[i] - arr[i - k];
+    // evaluate window
+}
+```
+
+### Example: Maximum Sum Subarray of Size K
+```java
+public int maxSum(int[] arr, int k) {
+    int windowSum = 0;
+    for (int i = 0; i < k; i++) {
+        windowSum += arr[i];
+    }
+    
+    int maxSum = windowSum;
+    for (int i = k; i < arr.length; i++) {
+        windowSum += arr[i] - arr[i - k];
+        maxSum = Math.max(maxSum, windowSum);
+    }
+    return maxSum;
+}
+```
+
+---
+
+## Variable-Size Sliding Window
+
+Window size expands/shrinks based on a condition. Common for "at most", "at least", or "longest/shortest" problems.
+
+### Pattern
+```java
+int left = 0;
+for (int right = 0; right < n; right++) {
+    // expand window by adding arr[right]
+    
+    while (conditionViolated) {
+        // shrink window from left
+        left++;
+    }
+    
+    // evaluate window
+}
+```
+
+### Example: Longest Substring with At Most K Distinct Characters
+```java
+public int longestSubstringKDistinct(String s, int k) {
+    HashMap<Character, Integer> map = new HashMap<>();
+    int left = 0, maxLen = 0;
+    
+    for (int right = 0; right < s.length(); right++) {
+        map.put(s.charAt(right), map.getOrDefault(s.charAt(right), 0) + 1);
+        
+        while (map.size() > k) {
+            char leftChar = s.charAt(left);
+            map.put(leftChar, map.get(leftChar) - 1);
+            if (map.get(leftChar) == 0) map.remove(leftChar);
+            left++;
+        }
+        
+        maxLen = Math.max(maxLen, right - left + 1);
+    }
+    return maxLen;
+}
+```
+
+### Example: Minimum Size Subarray Sum (At Least Target)
+```java
+public int minSubarrayLen(int target, int[] nums) {
+    int left = 0, sum = 0, minLen = Integer.MAX_VALUE;
+    
+    for (int right = 0; right < nums.length; right++) {
+        sum += nums[right];
+        
+        while (sum >= target) {
+            minLen = Math.min(minLen, right - left + 1);
+            sum -= nums[left++];
+        }
+    }
+    return minLen == Integer.MAX_VALUE ? 0 : minLen;
+}
+```
+
+---
+
+## Common Question Types
+
+| Type | Condition | Example |
+|------|-----------|---------|
+| Maximum sum (fixed k) | Sum of k elements | Max sum subarray of size k |
+| Longest substring | At most K distinct | Longest with ≤ 2 distinct chars |
+| Shortest subarray | At least sum S | Min length ≥ target sum |
+| Longest repeating | All unique | Longest without repeating chars |
+| Window contains | Target chars | Minimum window substring |
+
+---
+
+## Differences From Related Patterns
+
+| Pattern | Key Difference |
+|---------|----------------|
+| Two Pointers | Sliding window has a bounded window; two pointers find pairs without fixed size |
+| Prefix Sum | Prefix sum answers queries; sliding window maintains a dynamic constraint |
+| Kadane's | Kadane's handles negative numbers optimally; sliding window requires a constraint |
+
+---
+
+## Complexity
+- **Time**: O(n) - each element enters and exits the window at most once
+- **Space**: O(1) for fixed-size; O(min(n, charset)) for variable-size with hashmap
+
+## Recognition Cues
+- "Find the longest/shortest subarray/substring with..."
+- "Maximum sum of k consecutive elements"
+- "Contains at most/at least K..."
+- "Subarray sum equals/at least..."
+
+---
+
+## Key Takeaway
+Sliding window turns nested loops into a single pass by maintaining state. Use **fixed** when the size is given; use **variable** when you need to find the best window that satisfies a condition.
