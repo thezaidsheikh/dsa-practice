@@ -20,4 +20,4 @@ A curated DSA practice collection focused on clear explanations, complexity anal
 - `RisingBrain/` - Additional practice problems
 - `padho-with-pratyush/` - Detailed problem breakdowns
 
-Each problem includes brute-force, optimized, and optimal approaches with Java implementations.
+Each problem includes brute-force, optimized, and optimal approaches with Java implementations
