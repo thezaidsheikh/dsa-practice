@@ -10,6 +10,7 @@ A curated DSA practice collection focused on clear explanations, complexity anal
 - Kadane's Algorithm
 - Graph Traversal (BFS, DFS)
 - Topological Sort (DAG)
+- Bipartite Graph
 - And more...
 
 ## Structure
