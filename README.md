@@ -15,7 +15,7 @@ A curated DSA practice collection focused on clear explanations, complexity anal
 
 ## Structure
 
-- `Algorithms-Patterns/` - Core algorithm patterns with explanations
+- `Algorithms-Patterns/graph/` - Graph concepts
 - `Leetcode-150/` - Top Interview 150 problems
 - `Striver/` - Striver's DSA playlist problems
 - `RisingBrain/` - Additional practice problems
