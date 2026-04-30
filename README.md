@@ -11,6 +11,7 @@ A curated DSA practice collection focused on clear explanations, complexity anal
 - Graph Traversal (BFS, DFS)
 - Topological Sort (DAG)
 - Bipartite Graph
+- Graph Algorithms
 - And more...
 
 ## Structure
