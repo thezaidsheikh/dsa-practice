@@ -12,6 +12,7 @@ A curated DSA practice collection focused on clear explanations, complexity anal
 - Topological Sort (DAG)
 - Bipartite Graph
 - Graph Algorithms
+- Heap / Priority Queue
 - And more...
 
 ## Structure
