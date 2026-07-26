@@ -13,6 +13,7 @@ A curated DSA practice collection focused on clear explanations, complexity anal
 - Bipartite Graph
 - Graph Algorithms
 - Heap / Priority Queue
+- Recursion
 - And more...
 
 ## Structure
