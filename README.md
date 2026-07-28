@@ -4,16 +4,16 @@ A curated DSA practice collection focused on clear explanations, complexity anal
 
 ## Patterns Covered
 
-- Two Pointers
-- Sliding Window
-- Prefix Sum
-- Kadane's Algorithm
-- Graph Traversal (BFS, DFS)
-- Topological Sort (DAG)
+- BFS / DFS
 - Bipartite Graph
 - Graph Algorithms
 - Heap / Priority Queue
+- Kadane's Algorithm
+- Prefix Sum
 - Recursion
+- Sliding Window
+- Topological Sort (DAG)
+- Two Pointers
 - And more...
 
 ## Structure
