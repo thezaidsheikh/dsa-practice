@@ -32,7 +32,7 @@ If `current_max` becomes negative, you reset it to the current element because a
 - i=8: element=4 → `current_max = max(4, 1+4)=5`, `global_max=6`
 - Result: `global_max = 6` (subarray `[4, -1, 2, 1]`)
 
-**Code Outline**:
+**Code Outline (Python)**:
 ```python
 def kadane(arr):
     if not arr: return 0
@@ -41,6 +41,19 @@ def kadane(arr):
         current_max = max(num, current_max + num)
         global_max = max(global_max, current_max)
     return global_max
+```
+
+### Code Implementation (Java)
+```java
+public int maxSubArray(int[] nums) {
+    int currentMax = nums[0];
+    int globalMax = nums[0];
+    for (int i = 1; i < nums.length; i++) {
+        currentMax = Math.max(nums[i], currentMax + nums[i]);
+        globalMax = Math.max(globalMax, currentMax);
+    }
+    return globalMax;
+}
 ```
 
 ## Important Insights and Definitions
@@ -52,12 +65,23 @@ def kadane(arr):
   - **With Constraints**: For example, length of subarray must be at least L.
 - **Empty Subarray**: Standard Kadane's doesn't consider empty subarrays; modify to allow zero if needed.
 
+## Complexity Analysis
+- **Time**: O(n) — single pass.
+- **Space**: O(1) — constant extra variables.
+
+## Edge Cases to Watch For
+- **Empty array**: Return 0 or throw based on problem constraints — standard Kadane's assumes at least one element.
+- **All negative numbers**: Returns the maximum (least negative) element, not 0.
+- **All zeros/positive**: `current_max` keeps growing; works normally.
+- **Empty subarray allowed**: If the problem lets you return 0, adjust initialization (`max(0, ...)` style).
+- **Overflow**: with very large values `current_max + nums[i]` can overflow int; use `long` when needed.
+
 ## Differences from Other Patterns
 - **vs. Prefix Sum**: Prefix sum precomputes sums for O(1) queries, while Kadane's finds a single best contiguous sum in O(1) space.
 - **vs. Sliding Window**: Sliding window maintains a specific condition (e.g., size K), while Kadane's allows any contiguous subarray.
 - **vs. Two Pointers**: Two pointers often look for pairs or specific boundaries, while Kadane's is designed for sum optimization.
 
-## Template Questions to Remember When to Use
+## Recognition Cues / Template Questions
 - Does the problem ask for the "maximum sum of a contiguous subarray"?
 - Are there negative numbers and you need to efficiently find the best sum?
 - Is the problem asking for something like: "Find the subarray with the maximum sum" or "Find maximum profit given a sequence of daily changes"?
@@ -69,9 +93,12 @@ def kadane(arr):
 - **Dynamic programming** foundation for more complex sum/product problems.
 - **Financial applications**: Maximum profit from price changes (stock prices daily differences).
 
-## Complexity
-- **Time**: O(n) — single pass.
-- **Space**: O(1) — constant extra variables.
+## Limitations / When Not to Use
+- **Empty subarray semantics**: Standard Kadane's can't represent an empty subarray; tweak the initialization if the problem allows returning 0.
+- **Exact length constraints**: If the subarray must have an exact size, sliding window is a better fit.
+- **Maximum product**: Kadane's max-sum logic alone fails for products (negatives flip the sign); you must track both min and max.
+- **Finding the actual subarray**: Kadane's finds the sum; to also return the subarray you must track the start and end indices separately.
 
----
-*Key Insight: Kadane's algorithm works because it localizes the optimal solution: any subarray ending at position i either starts at i or extends the optimal subarray ending at i-1. That's the dynamic programming substructure.*
+## Key Takeaways
+- Kadane's algorithm works because it localizes the optimal solution: any subarray ending at position i either starts at i or extends the optimal subarray ending at i-1. That's the dynamic programming substructure.
+- If `current_max` goes negative, throw it away and start fresh — a negative running sum can only hurt future subarrays.
