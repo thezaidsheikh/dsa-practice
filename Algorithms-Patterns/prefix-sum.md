@@ -23,7 +23,7 @@ Prefix Sum (also called Cumulative Sum) is a technique where you precompute an a
 - Precompute prefix sums once.
 - Each query answered in O(1) time using `prefix[R+1] - prefix[L]`.
 
-**Example Code**:
+**Example Code (Python)**:
 ```python
 arr = [3, 6, 2, 8, 7, 5, 4]
 prefix = [0] * (len(arr) + 1)
@@ -35,18 +35,63 @@ l, r = 2, 5
 result = prefix[r+1] - prefix[l]   # O(1)
 ```
 
+### Code Implementation (Java)
+```java
+class NumArray {
+    private int[] prefix;
+
+    public NumArray(int[] nums) {
+        prefix = new int[nums.length + 1];
+        for (int i = 0; i < nums.length; i++) {
+            prefix[i + 1] = prefix[i] + nums[i];
+        }
+    }
+
+    public int sumRange(int left, int right) {
+        return prefix[right + 1] - prefix[left];
+    }
+}
+```
+
 ## Important Insights and Definitions
 - **Padding**: Extra zero at `prefix[0]` simplifies formulas.
 - **Subarray Sum = K**: If you want to count subarrays summing to K, use `prefix[j] - prefix[i] = K` → `prefix[i] = prefix[j] - K`. Use a hashmap to store frequencies of prefix sums encountered.
 - **Handles Negative Numbers**: Works with negative numbers; useful for counting subarrays with given sum.
 - **2D Prefix Sum**: Extends to 2D matrices for O(1) submatrix sum queries (integral image concept).
 
+### Counting Subarrays with Sum K (Java)
+```java
+public int subarraySum(int[] nums, int k) {
+    HashMap<Integer, Integer> map = new HashMap<>();
+    map.put(0, 1); // empty prefix sum
+    int sum = 0, count = 0;
+    for (int num : nums) {
+        sum += num;
+        count += map.getOrDefault(sum - k, 0);
+        map.put(sum, map.getOrDefault(sum, 0) + 1);
+    }
+    return count;
+}
+```
+
+## Complexity Analysis
+- **Preprocessing**: O(n) time and O(n) additional space.
+- **Query**: O(1) time per range sum query.
+- **Counting subarrays with sum K**: O(n) time, O(n) space (hashmap).
+
+## Edge Cases to Watch For
+- **Empty array**: prefix array is just `[0]`; queries are invalid.
+- **l = 0**: formula `prefix[r+1] - prefix[0]` still works thanks to the padding zero.
+- **Integer overflow**: with large arrays, sums can overflow int — consider `long` where needed.
+- **Negative numbers**: handled naturally; for "sum % K == 0" counting, adjust the modulo so negative remainders are handled correctly.
+- **Frequently updated arrays**: prefix sums go stale after every update — use a Fenwick tree (BIT) instead.
+
 ## Differences from Other Patterns
 - **vs. sliding window**: Sliding window adjusts window size to maintain a condition (e.g., at most K distinct), while prefix sum precomputes for O(1) range queries. Prefix sum doesn't inherently enforce conditions on subarrays.
 - **vs. Kadane's algorithm**: Kadane's finds the maximum sum of any contiguous subarray in O(1) space. Prefix sum can find maximum sum subarray (by scanning for `max(prefix[j] - min(prefix[i]))`), but needs O(n) space. However, prefix sum is more versatile for counting problems (e.g., number of subarrays summing to K).
 - **vs. two pointers**: Two pointers technique avoids nested loops without extra space; prefix sum adds O(n) space for capabilities like counting subarrays matching a condition.
 
-## Template Questions to Remember When to Use
+## Recognition Cues / Template Questions
 - Do I need to quickly compute the sum of any subarray (range sum queries)?
 - Is the problem about counting the number of subarrays with a specific sum (e.g., equals K, divisible by K)?
 - Does the problem involve "sum of elements between L and R in many queries"?
@@ -60,10 +105,12 @@ result = prefix[r+1] - prefix[l]   # O(1)
 - **Equilibrium index**: Index where sum of left elements equals sum of right elements (use prefix sums for O(n)).
 - **2D matrix range sum** (using 2D prefix sum): Compute sum of any submatrix quickly.
 
-## Complexity
-- **Preprocessing**: O(n) time and O(n) additional space.
-- **Query**: O(1) time per range sum query.
-- **Counting subarrays with sum K**: O(n) time, O(n) space (hashmap).
+## Limitations / When Not to Use
+- **Frequently updated arrays**: Prefix sums go stale after every update; use a Fenwick tree (BIT) for point-update range-sum queries.
+- **O(n) space cost**: If O(1) auxiliary space is required, two pointers or Kadane's may be better — prefix sum trades space for query speed.
+- **Enforcing complex conditions**: Prefix sum computes sums but doesn't inherently enforce constraints like "at most K distinct characters"; that's sliding window territory.
+- **Large sums**: Watch for overflow; switch to `long` when values are big.
 
----
-*Key Insight: Prefix sum transforms a range sum problem into a difference of two numbers. The magic happens when you realize that `sum(L..R) = prefix[R] - prefix[L-1]`. This enables powerful counting via hashmap when combined with the equation `prefix[j] - prefix[i] = target`.*
+## Key Takeaways
+- Prefix sum transforms a range sum problem into a difference of two numbers: `sum(L..R) = prefix[R+1] - prefix[L]`.
+- Combined with a hash map, it powers counting problems via `prefix[j] - prefix[i] = target`, and it handles negative numbers naturally.
