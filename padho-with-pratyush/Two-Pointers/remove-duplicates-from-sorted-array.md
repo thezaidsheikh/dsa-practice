@@ -90,3 +90,33 @@ class Solution {
 ```
 Time complexity - O(n), single pass with two pointers
 Space complexity - O(1), in-place
+
+Sol 4: Your Solution - Two pointers with swapping
+1. Keep two pointers `i` and `j`, both starting at index 0.
+2. Move `j` forward to scan the array.
+3. Whenever `nums[i] != nums[j]`, swap `nums[j]` with `nums[i + 1]` and move `i` ahead.
+4. Return `i + 1` as the count of unique elements.
+
+```java
+class Solution {
+ public int removeDuplicates(int[] nums) {
+ int len = nums.length;
+ int i = 0;
+ int j = 0;
+
+ while(i < len && j < len) {
+ if(nums[i] != nums[j]) {
+ int temp = nums[j];
+ nums[j] = nums[i+1];
+ nums[i+1] = temp;
+ i++;
+ }
+ j++;
+ }
+
+ return i+1;
+ }
+}
+```
+Time complexity - O(n), one pass
+Space complexity - O(1)
