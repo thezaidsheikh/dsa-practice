@@ -31,4 +31,4 @@ Each problem includes brute-force, optimized, and optimal approaches with Java i
 
 ## How to Use
 
-Pick a pattern first (for example, Sliding Window or Two Pointers), then solve 2-3 related problems from different folders to reinforce recognition.
+Pick a pattern first (for example, Sliding Window or Two Pointers), then solve 2-3 related problems from different folders to reinforce recognition and speed.
