@@ -25,6 +25,7 @@ This list highlights recurring interview patterns used across the notes.
 - `Striver/` - Striver's DSA playlist problems
 - `RisingBrain/` - Additional practice problems
 - `padho-with-pratyush/` - Detailed problem breakdowns
+- Root `.md` files - Pattern-first quick revision notes
 
 Each problem includes brute-force, optimized, and optimal approaches with Java implementations.
 
