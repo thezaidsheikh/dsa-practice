@@ -1,4 +1,4 @@
-# DSA Practice
+# DSA Practice Repository
 
 A curated DSA practice collection focused on clear explanations, complexity analysis, and clean solutions.
 
