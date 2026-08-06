@@ -4,6 +4,8 @@ A curated DSA practice collection focused on clear explanations, complexity anal
 
 ## Patterns Covered
 
+This list highlights recurring interview patterns used across the notes.
+
 - BFS / DFS
 - Bipartite Graph
 - Graph Algorithms
