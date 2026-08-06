@@ -1,6 +1,6 @@
 # DSA Practice Repository
 
-A curated DSA practice collection focused on clear explanations, complexity analysis, and clean solutions.
+A curated DSA practice collection focused on clear explanations, complexity analysis, and clean Java solutions.
 
 ## Patterns Covered
 
