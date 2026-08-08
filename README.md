@@ -1,8 +1,10 @@
-# DSA Practice
+# DSA Practice Repository
 
-A curated DSA practice collection focused on clear explanations, complexity analysis, and clean solutions.
+A curated DSA practice collection focused on clear explanations, complexity analysis, and clean Java solutions.
 
 ## Patterns Covered
+
+This list highlights recurring interview patterns used across the notes.
 
 - BFS / DFS
 - Bipartite Graph
@@ -23,9 +25,10 @@ A curated DSA practice collection focused on clear explanations, complexity anal
 - `Striver/` - Striver's DSA playlist problems
 - `RisingBrain/` - Additional practice problems
 - `padho-with-pratyush/` - Detailed problem breakdowns
+- Root `.md` files - Pattern-first quick revision notes
 
 Each problem includes brute-force, optimized, and optimal approaches with Java implementations.
 
 ## How to Use
 
-Pick a pattern first (for example, Sliding Window or Two Pointers), then solve 2-3 related problems from different folders to reinforce recognition.
+Pick a pattern first (for example, Sliding Window or Two Pointers), then solve 2-3 related problems from different folders to reinforce recognition and speed.
