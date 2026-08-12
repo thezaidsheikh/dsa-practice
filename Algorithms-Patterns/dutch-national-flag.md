@@ -25,9 +25,9 @@ At each step, we examine the element at `mid` and move exactly one pointer to ma
 ### Algorithm Steps
 1. Initialize `low = 0`, `mid = 0`, `high = n - 1`
 2. While `mid <= high`:
-   - If `arr[mid] == 0`: swap `arr[mid]` and `arr[low]`, increment both `low` and `mid`
-   - If `arr[mid] == 1`: increment `mid` (element is already in correct region)
-   - If `arr[mid] == 2`: swap `arr[mid]` and `arr[high]`, decrement `high` (do NOT increment `mid`)
+    - If `arr[mid] == 0`: swap `arr[mid]` and `arr[low]`, increment both `low` and `mid`
+    - If `arr[mid] == 1`: increment `mid` (element is already in correct region)
+    - If `arr[mid] == 2`: swap `arr[mid]` and `arr[high]`, decrement `high` (do NOT increment `mid`)
 3. Array is now partitioned into three regions
 
 ### Simple Example
