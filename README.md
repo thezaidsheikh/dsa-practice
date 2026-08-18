@@ -7,6 +7,7 @@ A curated DSA practice collection focused on clear explanations, complexity anal
 This list highlights recurring interview patterns used across the notes.
 
 - BFS / DFS
+- Binary Search
 - Bipartite Graph
 - Graph Algorithms
 - Heap / Priority Queue
