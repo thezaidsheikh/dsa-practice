@@ -90,43 +90,24 @@ That is why, instead of searching the subarrays with sum k, we will keep the occ
 In the map, we will store every prefix sum calculated, with its occurrence in a <key, value> pair. Now, at index i, we just need to check the map data structure to get the number of times that the subarrays with the prefix sum x-k occur. Then we will simply add that number to our answer.
 ```java
 class Solution {
-    // Function to find count of subarrays with sum equal to k using prefix sums and hashmap
-    public int subarraySum(int[] arr, int k) {
-        // Size of the array
-        int n = arr.length;
-
-        // Map to store frequency of prefix sums
-        HashMap<Integer, Integer> prefixSumCount = new HashMap<>();
-
-        // Initialize prefix sum and count of subarrays
-        int prefixSum = 0;
+    public int subarraySum(int[] nums, int k) {
+        int n = nums.length;
+        int sum = 0;
         int count = 0;
+        Map<Integer, Integer> freq = new HashMap<>();
+        freq.put(0, 1);
 
-        // Base case: prefix sum 0 has occurred once
-        prefixSumCount.put(0, 1);
-
-        // Traverse through the array
         for (int i = 0; i < n; i++) {
-            // Add current element to prefix sum
-            prefixSum += arr[i];
+            sum += nums[i];
+            int need = sum - k;
+            count += freq.getOrDefault(need, 0);
 
-            // Calculate the prefix sum that needs to be removed
-            int remove = prefixSum - k;
-
-            // If this prefix sum has been seen before,
-            // add its count to the result
-            if (prefixSumCount.containsKey(remove)) {
-                count += prefixSumCount.get(remove);
-            }
-
-            // Update the frequency of the current prefix sum
-            prefixSumCount.put(prefixSum, prefixSumCount.getOrDefault(prefixSum, 0) + 1);
+            // Record this sum occurrence
+            freq.put(sum, freq.getOrDefault(sum, 0) + 1);
         }
-
-        // Return the total count of subarrays
         return count;
     }
 }
 ```
-Time Complexity: O(n) We traverse the array once, where n is the size of the array. Each prefix sum operation and hashmap lookup is O(1) on average.
-Space Complexity: O(n) In the worst case, all prefix sums are distinct and stored in the hashmap, so space grows linearly with input size
+Time Complexity: O(n), single pass; each prefix-sum update and `getOrDefault` lookup is O(1) on average.
+Space Complexity: O(n), the hash map stores each distinct prefix sum (worst case: all prefix sums are unique).
