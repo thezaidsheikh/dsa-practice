@@ -35,48 +35,42 @@ class Solution {
 Time Complexity: O(n⁴ log n), O(n⁴) quadruplets generated, each insertion costs O(log m) in the set.
 Space Complexity: O(m), where m is the number of unique quadruplets.
 
-Sol 2: Better - Sort + fix one index + two-pointer two-sum
+Sol 2: Better - Fix two indices + HashSet two-sum
 # Intuition
-Sort the array so duplicate skipping becomes easy and two pointers work. Fix `i` and `j`, then use two pointers `k` and `l` to find pairs that sum to `target - nums[i] - nums[j]`. This reduces one loop from the brute force, going from O(n⁴) to O(n³).
+Fix `i` and `j` to reduce the problem to two-sum in the remaining suffix. Traverse `k` from `j + 1` onward, and for each `nums[k]`, check whether `target - nums[i] - nums[j] - nums[k]` was already seen. This avoids sorting entirely but still requires a set to suppress duplicates.
 
-1. Sort the array.
-2. Iterate `i` from `0` to `n - 4`, skip duplicates for `i`.
-3. Iterate `j` from `i + 1` to `n - 3`, skip duplicates for `j`.
-4. Set `k = j + 1`, `l = n - 1`; move pointers based on current sum vs target.
-5. On a match, record the quadruplet, move both pointers, and skip duplicates.
+1. Iterate `i` from `0` to `n - 4`.
+2. Iterate `j` from `i + 1` to `n - 3`.
+3. Maintain a `HashSet` of values seen in the inner loop. For each `nums[k]`, check if the complement is in the set.
+4. On a match, sort the quadruplet, add it to a global `HashSet` of quadruplets.
+5. Return the de-duplicated list.
 
 ```java
 class Solution {
     public List<List<Integer>> fourSum(int[] nums, int target) {
-        Arrays.sort(nums);
         int n = nums.length;
-        List<List<Integer>> ls = new ArrayList<>();
+        Set<List<Integer>> ans = new HashSet<>();
 
         for (int i = 0; i < n; i++) {
-            if (i > 0 && nums[i] == nums[i - 1]) continue;
             for (int j = i + 1; j < n; j++) {
-                if (j != i + 1 && nums[j] == nums[j - 1]) continue;
-
-                int k = j + 1, l = n - 1;
-                while (k < l) {
-                    long sum = (long) nums[i] + nums[j] + nums[k] + nums[l];
-                    if (sum == target) {
-                        ls.add(Arrays.asList(nums[i], nums[j], nums[k], nums[l]));
-                        k++;
-                        l--;
-                        while (k < l && nums[k] == nums[k - 1]) k++;
-                        while (k < l && nums[l] == nums[l + 1]) l--;
-                    } else if (sum > target) l--;
-                    else k++;
+                HashSet<Integer> seen = new HashSet<>();
+                for (int k = j + 1; k < n; k++) {
+                    long need = (long) target - nums[i] - nums[j] - nums[k];
+                    if (need >= Integer.MIN_VALUE && need <= Integer.MAX_VALUE && seen.contains((int) need)) {
+                        List<Integer> quad = Arrays.asList(nums[i], nums[j], nums[k], (int) need);
+                        Collections.sort(quad);
+                        ans.add(quad);
+                    }
+                    seen.add(nums[k]);
                 }
             }
         }
-        return ls;
+        return new ArrayList<>(ans);
     }
 }
 ```
-Time Complexity: O(n³), sorting is O(n log n) and the two nested-pointer scan over `(i, j)` dominates.
-Space Complexity: O(1) auxiliary (excluding the output and sorting overhead).
+Time Complexity: O(n³ log n), three nested loops × O(log m) set insertion per match.
+Space Complexity: O(n) for the seen set (plus result storage).
 
 Sol 3: Optimal - Sort + fix two indices + two pointers (pruned)
 # Intuition
