@@ -9,6 +9,7 @@ This list highlights recurring interview patterns used across the notes.
 - BFS / DFS
 - Binary Search
 - Bipartite Graph
+- Bit Manipulation
 - Dynamic Programming
 - Graph Algorithms
 - Heap / Priority Queue
