@@ -13,6 +13,7 @@ This list highlights recurring interview patterns used across the notes.
 - Dynamic Programming
 - Graph Algorithms
 - Heap / Priority Queue
+- Intervals
 - Kadane's Algorithm
 - Prefix Sum
 - Recursion
