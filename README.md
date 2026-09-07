@@ -43,3 +43,7 @@ Most problem notes include brute-force, better, and optimal approaches with Java
 Pick a pattern first (for example, Sliding Window or Two Pointers), then solve 2-3 related problems from different folders to reinforce recognition and speed.
 
 > **Note:** All solutions are written in Java and follow interview-style formatting.
+
+## Contributing
+
+Found a mistake or want to add a note? Open a PR or drop a note — corrections to explanations and complexity analysis are always welcome.
