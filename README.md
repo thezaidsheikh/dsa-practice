@@ -1,6 +1,6 @@
 # DSA Practice Repository
 
-A curated collection of 80+ DSA notes focused on clear explanations, complexity analysis, and clean Java solutions.
+A curated collection of 85+ DSA notes focused on clear explanations, complexity analysis, and clean Java solutions.
 
 ## Goal
 
