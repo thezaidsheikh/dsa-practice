@@ -11,6 +11,7 @@ Build strong pattern recognition and problem-solving speed for coding interviews
 This list highlights recurring interview patterns used across the notes.
 
 - BFS / DFS
+- Backtracking
 - Binary Search
 - Bipartite Graph
 - Bit Manipulation
