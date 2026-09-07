@@ -2,6 +2,10 @@
 
 A curated collection of 80+ DSA notes focused on clear explanations, complexity analysis, and clean Java solutions.
 
+## Goal
+
+Build strong pattern recognition and problem-solving speed for coding interviews by studying reusable approaches across multiple problems.
+
 ## Patterns Covered
 
 This list highlights recurring interview patterns used across the notes.
