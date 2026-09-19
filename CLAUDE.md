@@ -6,16 +6,23 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is a Data Structures and Algorithms (DSA) practice repository containing solutions organized by problem types and difficulty levels. The repository focuses on algorithmic problem-solving with implementations in various categories.
 
 ## Folder Structure and Content
-### Core Problem Categories
-- **Binary-Search/**: Solutions for rotated sorted array problems (Find Minimum, Search in Rotated Sorted Array)
-- **Striver/**: Striver's curated array problems (Rotate Array, Spiral Matrix, Leaders in Array)
-- **Leetcode-150/**: LeetCode 150 problems (Merge Sorted Array, Remove Element, Majority Element)
+### Core Problem Categories (all under `problems/`)
+- **Array/**: Array problems (Merge Sorted Array, Remove Element, Majority Element, Spiral Matrix, Rotate Array)
+- **Binary-Search/**: Solutions for rotated sorted array problems (Find Minimum, Search in Rotated Sorted Array, Koko Eating Bananas)
+- **Graph/**: Graph problems (BFS/DFS traversal, Number of Islands, Bipartite, Rotting Oranges)
 - **Heap/**: Heap-related problems (Kth Largest Element, Top K Frequent Elements, Task Scheduler)
-- **Tree/**: Tree traversal and manipulation (Inorder/Preorder/Postorder, Level Order, LCA, BST operations)
+- **LinkedList/**: Linked list problems (Reverse, Cycle detection, Middle, K-group reversal)
+- **Kadanes-Algorithm/**: Maximum subarray sum problems and variations
+- **Prefix-Sum/**: Subarray sum problems (Subarray Sum Equals K, Pivot Index)
 - **Recursion/**: Recursive problem solutions (Fibonacci, Generate Parentheses, Combination Sum)
-- **Prefix-Sum/**: Subarray sum problems (Subarray Sum Equals K, Maximum Subarray Sum)
+- **Sliding-Window/**: Window problems (Longest Substring Without Repeating Characters, Fruit Into Baskets)
+- **Stack/**: Stack problems (Valid Parentheses, Daily Temperatures)
+- **Tree/**: Tree traversal and manipulation (Inorder/Preorder/Postorder, Level Order, LCA, BST operations)
+- **Two-Pointers/**: Pair and triplet problems (Two Sum II, 3Sum, Trapping Rain Water, Container With Most Water)
+- **problem-template.md**: Standard format for adding new problem notes
 
 ### Additional Patterns
+- **Algorithms-Patterns/**: Pattern-first concept notes (graph, heap, two pointers, sliding window, prefix sum, kadane's algorithm)
 - **Two Pointers**: Solutions for problems like Two Sum, Container With Most Water
 - **Sliding Window**: Solutions for problems like Longest Substring Without Repeating Characters
 - **Kadane's Algorithm**: Solutions for maximum subarray sum problems
@@ -45,7 +52,7 @@ Since this is a documentation and practice repository without executable code, n
 
 ## Important Notes
 - This repository is for learning and documentation purposes
-- Solutions are primarily documented in markdown format
+- Solutions are primarily documented in markdown format inside `problems/`
 - No actual Python/JavaScript/Java code files are present
 - Focus is on algorithmic thinking and problem-solving approaches
 - Each solution includes detailed explanations and complexity analysis

@@ -1,14 +1,14 @@
-# padho-with-pratyush Problem Note Template
+# Problem Note Template
 
-Standard structure for problem notes in this folder. This track holds fuller, intuition-heavy writeups with multiple solution tiers. The same format applies across its topic subfolders (`Binary-Search/`, `Heap/`, `Prefix-Sum/`, `Recursion/`, `Tree/`, `Graph/`).
+Standard structure for all problem notes in the `problems/` folder. This template works for every topic subfolder (`Array/`, `Binary-Search/`, `Graph/`, `Heap/`, `Kadanes-Algorithm/`, `LinkedList/`, `Prefix-Sum/`, `Recursion/`, `Sliding-Window/`, `Stack/`, `Tree/`, `Two-Pointers/`).
 
 ## How to Use This Template
 1. First line: `Prob:` followed by the problem URL.
-2. Always write three solution tiers: `Sol 1: Brute Force`, `Sol 2: Better`, `Sol 3: Optimal`. Do not skip tiers.
+2. Write the solution tiers that make sense: `Sol 1: Brute Force`, `Sol 2: Better`, `Sol 3: Optimal`. Do not skip tiers when the problem genuinely has them.
 3. Explain the intuition behind non-obvious approaches (`# Intuition`) before the code, and keep the numbered steps.
 4. Use Java with `class Solution` (LeetCode style).
 5. Close each solution with `Time complexity` and `Space complexity` lines; add a short explanation line when the complexity isn't obvious.
-6. Place the note in the subfolder that matches its topic (Binary-Search, Heap, Prefix-Sum, Recursion, Tree, Graph).
+6. Place the note in the topic subfolder that matches its pattern (see list above).
 
 ## Template
 

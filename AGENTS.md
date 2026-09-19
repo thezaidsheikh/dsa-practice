@@ -18,7 +18,7 @@ The current README describes the repo as a curated DSA practice collection focus
 
 ## What Actually Exists Here
 
-At the time of writing, the repo contains `81` Markdown files and no normal source-code package structure such as `src/`, `tests/`, `package.json`, `pom.xml`, or `requirements.txt`.
+At the time of writing, the repo contains `132` Markdown files and no normal source-code package structure such as `src/`, `tests/`, `package.json`, `pom.xml`, or `requirements.txt`.
 
 Key top-level items:
 
@@ -31,11 +31,8 @@ Key top-level items:
   - `prefix-sum.md`
   - `kadanes-algorithm.md`
 - problem-set folders:
+  - `problems/`
   - `Algorithms-Patterns/`
-  - `Leetcode-150/`
-  - `Striver/`
-  - `RisingBrain/`
-  - `padho-with-pratyush/`
 
 There are also editor/project folders like `.idea/` and `.vscode/`, but they are not part of the learning content.
 
@@ -88,67 +85,42 @@ Use this folder when the content is about:
 
 Do not add single LeetCode problem notes here unless the note is explicitly teaching a pattern through that example.
 
-### 3. `Leetcode-150/`
+### 3. `problems/`
 
-This folder contains compact notes for Top Interview 150 style problems, such as:
+All problem solutions live here regardless of which study track they originally came from (Top Interview 150, Striver, RisingBrain, padho-with-pratyush). They are organized by topic subfolders:
 
-- `RemoveElement.md`
-- `MergeSortedArray.md`
-- `majority-element.md`
-- `rotate-array.md`
-- `best-time-to-buy-and-sell-stock.md`
+- `problems/Array/`
+- `problems/Binary-Search/`
+- `problems/Graph/`
+- `problems/Heap/`
+- `problems/Kadanes-Algorithm/`
+- `problems/LinkedList/`
+- `problems/Prefix-Sum/`
+- `problems/Recursion/`
+- `problems/Sliding-Window/`
+- `problems/Stack/`
+- `problems/Tree/`
+- `problems/Two-Pointers/`
 
-These notes are typically short and direct:
+Representative files:
 
-- problem link
-- one or more named solutions
+- `problems/Array/spiral-matrix.md`
+- `problems/Array/majority-element-ii.md`
+- `problems/Binary-Search/KokoEatingBanana.md`
+- `problems/Heap/task-scheduler.md`
+- `problems/Recursion/generate-parentheses.md`
+- `problems/Two-Pointers/3sum.md`
+- `problems/Tree/validate-binary-search-tree.md`
+
+The topic subfolder is the primary organizing signal: when two notes cover the same problem, only the fuller/more complete version was kept during the merge. The style still varies file to file, but the common baseline is:
+
+- problem link as `Prob:`
+- one or more named solutions (`Sol 1: Brute Force`, `Sol 2: Better`, `Sol 3: Optimal`)
 - numbered steps
 - Java code
 - time and space complexity
 
-This folder is suitable for concise problem-by-problem documentation.
-
-### 4. `Striver/`
-
-This folder currently focuses on Striver-style array content, for example:
-
-- `Striver/Array/rotate-array.md`
-- `Striver/Array/spiral-matrix.md`
-- `Striver/Array/set-matrix-zeros.md`
-- `Striver/Array/majority-element-ii.md`
-- `Striver/Array/longestConsecutiveSeq.md`
-
-Use this area for notes aligned with Striver’s sequencing or naming conventions. Preserve existing naming even when filenames are inconsistent with strict slug formatting.
-
-### 5. `RisingBrain/`
-
-This currently includes array/two-pointer material such as:
-
-- `RisingBrain/Array/Two-Pointers/3sum.md`
-- `RisingBrain/Array/Two-Pointers/container-with-most-water.md`
-- `RisingBrain/Array/Two-Pointers/trapping-rain-water.md`
-- `RisingBrain/Array/Two-Pointers/two-sum-ii-input-array-is-sorted.md`
-
-Use this folder when content is tied to that learning track or grouping.
-
-### 6. `padho-with-pratyush/`
-
-This is one of the largest content sections and includes:
-
-- `Binary-Search/`
-- `Heap/`
-- `Prefix-Sum/`
-- `Recursion/`
-- `Tree/`
-
-Representative files:
-
-- `padho-with-pratyush/Binary-Search/KokoEatingBanana.md`
-- `padho-with-pratyush/Heap/task-scheduler.md`
-- `padho-with-pratyush/Recursion/generate-parentheses.md`
-- `padho-with-pratyush/Tree/validate-binary-search-tree.md`
-
-This folder usually contains fuller explanations than the most compact notes, but the style still varies file to file.
+`problems/problem-template.md` holds the standard format for new problem notes. Do not recreate platform-specific folders; add new notes to the matching topic subfolder here instead.
 
 ## Important Reality About Style
 
@@ -206,12 +178,12 @@ Before creating a file, decide whether it belongs to:
 
 - a root-level pattern note
 - `Algorithms-Patterns/` for concept-first material
-- a curated track folder like `Leetcode-150/`, `Striver/`, `RisingBrain/`, or `padho-with-pratyush/`
+- `problems/` for a single problem solution
 
 Use these rules:
 
 - If the content teaches a reusable pattern, place it under `Algorithms-Patterns/` or update an existing root pattern note.
-- If the content is a single interview problem tied to a known study track, place it in that track’s folder.
+- If the content is a single interview problem, place it in the matching topic subfolder of `problems/`.
 - If a very similar note already exists, update it instead of creating a duplicate.
 - If both a root-level pattern file and a folder-level pattern file exist on the same topic, preserve both unless the user explicitly asks to consolidate.
 
@@ -222,7 +194,7 @@ Because the repo already has mixed conventions, use the nearest local convention
 Examples already present:
 
 - kebab-case: `majority-element.md`
-- mixed camel/caps: `BuyAndSellStock.md`
+- mixed camel/caps: `KokoEatingBanana.md`
 - spaces in filenames: `Find Minimum in Rotated Sorted Array.md`
 
 Agent rule:
@@ -401,10 +373,7 @@ These are real patterns in the repo and should influence edits:
 
 - Root pattern notes are more polished and educational.
 - `Algorithms-Patterns/` is the best home for reusable topics like heap, prefix sum, sliding window, and two pointers.
-- Folder-specific problem notes are often compact and direct.
-- `Leetcode-150/` favors short problem-centric writeups.
-- `padho-with-pratyush/` often includes intuition and deeper explanation.
-- Some files intentionally compare multiple solution tiers.
+- Problem notes under `problems/` often include intuition and deeper explanation; some are compact and direct, some have multiple solution tiers.
 - The repo values study utility over stylistic perfection.
 
 An agent should preserve this character.
