@@ -40,7 +40,7 @@ Most problem notes include brute-force, better, and optimal approaches with Java
 
 ## Getting Started
 
-Pick a pattern first (for example, Sliding Window or Two Pointers), then solve 2-3 related problems from `problems/` to reinforce recognition and speed.
+Pick a pattern first (for example, Sliding Window or Two Pointers), read its concept note in `Algorithms-Patterns/`, then solve 2-3 related problems from `problems/` to reinforce recognition and speed.
 
 > **Note:** All solutions are written in Java and follow interview-style formatting.
 
