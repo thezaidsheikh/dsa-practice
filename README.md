@@ -24,6 +24,7 @@ This list highlights recurring interview patterns used across the notes.
 - Prefix Sum
 - Recursion
 - Sliding Window
+- Stack / Monotonic Stack
 - Topological Sort (DAG)
 - Two Pointers
 - And more...
