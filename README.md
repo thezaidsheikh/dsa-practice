@@ -20,6 +20,7 @@ This list highlights recurring interview patterns used across the notes.
 - Heap / Priority Queue
 - Intervals
 - Kadane's Algorithm
+- Linked List
 - Prefix Sum
 - Recursion
 - Sliding Window
