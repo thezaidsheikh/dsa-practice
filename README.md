@@ -32,7 +32,7 @@ This list highlights recurring interview patterns used across the notes.
 ## Structure
 
 - `problems/` - All problem solutions, organized by topic subfolders (Array, Binary-Search, Graph, Heap, Kadanes-Algorithm, LinkedList, Prefix-Sum, Recursion, Sliding-Window, Stack, Tree, Two-Pointers)
-- `Algorithms-Patterns/` - Core algorithm patterns (graph, heap, tree, etc.)
+- `Algorithms-Patterns/` - Concept-first notes for core patterns (graph, heap, tree, etc.)
 - Root `.md` files - Pattern-first quick revision notes
 - `problems/problem-template.md` - Standard format for adding new problem notes
 
