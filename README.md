@@ -48,4 +48,4 @@ Pick a pattern first (for example, Sliding Window or Two Pointers), read its con
 
 ## Contributing
 
-Found a mistake or want to add a note? Open a PR or drop a note — corrections to explanations and complexity analysis are always welcome.
+Found a mistake or want to add a note? Open a PR or drop a note — fixes to explanations, code, and complexity analysis are always welcome.
