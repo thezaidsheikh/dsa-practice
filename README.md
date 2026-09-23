@@ -4,7 +4,7 @@ A curated collection of 100+ DSA notes focused on clear explanations, accurate c
 
 ## Goal
 
-Build strong pattern recognition and problem-solving speed for coding interviews by studying reusable approaches across multiple problems.
+Build strong pattern recognition and problem-solving speed for coding interviews by studying reusable approaches applied across many problems.
 
 ## Patterns Covered
 
