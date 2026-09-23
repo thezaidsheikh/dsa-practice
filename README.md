@@ -21,6 +21,7 @@ This list highlights recurring interview patterns used across the notes.
 - Intervals
 - Kadane's Algorithm
 - Linked List
+- Matrix
 - Prefix Sum
 - Recursion
 - Sliding Window
