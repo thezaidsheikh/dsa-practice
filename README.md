@@ -38,7 +38,7 @@ This list highlights recurring interview patterns used across the notes.
 - Root `.md` files - Pattern-first quick revision notes
 - `problems/problem-template.md` - Standard format for adding new problem notes
 
-Most problem notes include brute-force, better, and optimal approaches with Java implementations.
+Most problem notes include brute-force, better, and optimal solution tiers with Java implementations.
 
 ## Getting Started
 
