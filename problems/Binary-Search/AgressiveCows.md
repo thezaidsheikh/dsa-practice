@@ -45,5 +45,5 @@ class Solution {
     }
 }
 ```
-Time complexity = O(nlogm) + O(nlogm),
+Time complexity = O(n log n) for sorting + O(n log m) for binary search, where m = stalls[n-1] - stalls[0],
 Space complexity = O(1)
