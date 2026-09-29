@@ -38,7 +38,7 @@ class Solution {
     }
 }
 ```
-Time complexity - O(logn),
+Time complexity - O(log n + log m),
 Space complexity - O(1)
 
 Sol 2: Optimized Sol - Using 1 times binary search
@@ -52,7 +52,6 @@ class Solution {
         int n = matrix.length;
         int m = matrix[0].length;
         int low = 0, high = n*m - 1;
-        int target_row = -1;
 
         while(low <= high) {
             int guessIndex = (low + high) / 2;
@@ -66,5 +65,5 @@ class Solution {
     }
 }
 ```
-Time complexity - O(logn),
+Time complexity - O(log(n * m)),
 Space complexity - O(1)
