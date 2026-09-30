@@ -49,7 +49,10 @@ Each problem note covers the problem link, the pattern to recognize, step-by-ste
 
 ## Getting Started
 
-Pick a pattern first (for example, Sliding Window or Two Pointers), read its concept note in `Algorithms-Patterns/`, then solve 2-3 related problems from `problems/` to reinforce recognition and speed.
+1. Pick a pattern (for example, Sliding Window or Two Pointers).
+2. Read its concept note in `Algorithms-Patterns/`.
+3. Solve 2-3 related problems in `problems/` to reinforce recognition and speed.
+4. Come back after a few days and re-derive the approaches from scratch.
 
 > **Note:** All solutions are written in Java and follow interview-style formatting.
 
