@@ -2,6 +2,10 @@
 
 A curated collection of 100+ DSA notes focused on clear explanations, accurate complexity analysis, and clean Java solutions.
 
+## Why This Repo
+
+Most solutions online show you *what* to code. These notes also focus on *why* it works — the observation behind each optimization, so you can recall the pattern in an interview instead of memorizing code.
+
 ## Goal
 
 Build strong pattern recognition and problem-solving speed for coding interviews by studying reusable approaches applied across many problems.
