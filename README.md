@@ -40,6 +40,8 @@ This list highlights recurring interview patterns used across the notes.
 
 Most problem notes include brute-force, better, and optimal solution tiers with Java implementations.
 
+> **Tip:** When revising, cover the solution tiers and try to re-derive the optimal approach from the brute force before reading the code.
+
 ## Getting Started
 
 Pick a pattern first (for example, Sliding Window or Two Pointers), read its concept note in `Algorithms-Patterns/`, then solve 2-3 related problems from `problems/` to reinforce recognition and speed.
