@@ -17,6 +17,7 @@ This list highlights recurring interview patterns used across the notes.
 - Bit Manipulation
 - Dynamic Programming
 - Graph Algorithms
+- Greedy / Interval Scheduling
 - Heap / Priority Queue
 - Intervals
 - Kadane's Algorithm
