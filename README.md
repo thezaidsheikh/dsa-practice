@@ -43,6 +43,10 @@ Most problem notes include brute-force, better, and optimal solution tiers with 
 
 > **Tip:** When revising, cover the solution tiers and try to re-derive the optimal approach from the brute force before reading the code.
 
+## What's Inside a Note
+
+Each problem note covers the problem link, the pattern to recognize, step-by-step brute-force / better / optimal solutions, Java code, and time & space complexity for every tier.
+
 ## Getting Started
 
 Pick a pattern first (for example, Sliding Window or Two Pointers), read its concept note in `Algorithms-Patterns/`, then solve 2-3 related problems from `problems/` to reinforce recognition and speed.
