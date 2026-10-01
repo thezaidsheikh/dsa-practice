@@ -62,7 +62,7 @@ Each problem note covers the problem link, the pattern to recognize, step-by-ste
 3. Solve 2-3 related problems in `problems/` to reinforce recognition and speed.
 4. Come back after a few days and re-derive the approaches from scratch.
 
-> **Note:** All solutions are written in Java and follow interview-style formatting.
+> **Language:** All code examples are Java (LeetCode `class Solution` style) unless the surrounding context uses another language.
 
 ## Contributing
 
