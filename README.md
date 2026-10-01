@@ -33,7 +33,9 @@ This list highlights recurring interview patterns used across the notes.
 - Sliding Window
 - Stack / Monotonic Stack
 - Topological Sort (DAG)
+- Tries
 - Two Pointers
+- Union Find / Disjoint Set
 - And more...
 
 ## Structure
