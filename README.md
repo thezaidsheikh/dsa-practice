@@ -67,3 +67,5 @@ Each problem note covers the problem link, the pattern to recognize, step-by-ste
 ## Contributing
 
 Found a mistake or want to add a note? Open a PR or drop a note — fixes to explanations, code, and complexity analysis are always welcome.
+
+This repository is for personal study; content is maintained by whoever finds it useful.
