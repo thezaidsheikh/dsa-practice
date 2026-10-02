@@ -61,6 +61,7 @@ Each problem note covers the problem link, the pattern to recognize, step-by-ste
 2. Read its concept note in `Algorithms-Patterns/`.
 3. Solve 2-3 related problems in `problems/` to reinforce recognition and speed.
 4. Come back after a few days and re-derive the approaches from scratch.
+5. Repeat with a new pattern each week to build breadth gradually.
 
 > **Language:** All code examples are Java (LeetCode `class Solution` style) unless the surrounding context uses another language.
 
