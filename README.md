@@ -55,6 +55,8 @@ Most problem notes include brute-force, better, and optimal solution tiers with 
 
 Each problem note covers the problem link, the pattern to recognize, step-by-step brute-force / better / optimal solutions, Java code, and time & space complexity for every tier.
 
+Notes grow over time — if a solution feels thin, revisit it and add the reasoning you wish you had.
+
 ## Getting Started
 
 1. Pick a pattern (for example, Sliding Window or Two Pointers).
