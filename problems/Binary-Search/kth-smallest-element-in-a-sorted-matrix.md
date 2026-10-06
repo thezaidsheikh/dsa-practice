@@ -7,7 +7,7 @@ Sol 1: Optimal Solution - Using binary search
 4. Also now we will find the total count that is smaller then our guessed number.
 5. If the count is higher or equal to target or kth number then it is obvious that this number can be the smallest.
 6. If the count is lesser than it is obvious that to find the kth number we have to find at least k count.
-7. In this way our guessed number will bw the anser.
+7. In this way our guessed number will be the answer.
 
 ```java
 class Solution {
@@ -44,5 +44,5 @@ class Solution {
     }
 }
 ```
-Time complexity - O(n + m) (for function) + O(log R) = O(n * log R),
+Time complexity - O((n + m) * log R), where the count function is O(n + m) and binary search runs O(log R) times with R = matrix[n-1][m-1] - matrix[0][0],
 Space complexity - O(1)
