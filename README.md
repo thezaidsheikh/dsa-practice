@@ -17,6 +17,7 @@ This list highlights recurring interview patterns used across the notes.
 - BFS / DFS
 - Backtracking
 - Binary Search
+- Binary Search on Answer (min/max feasible value)
 - Bipartite Graph
 - Bit Manipulation
 - Dynamic Programming
